@@ -14,11 +14,34 @@ interface SeedProduct {
 type ValidSizes = 'XS' | 'S' | 'M' | 'L' | 'XL' | 'XXL' | 'XXXL';
 type ValidTypes = 'shirts' | 'pants' | 'hoodies' | 'hats';
 
+interface SeedUser {
+  email: string;
+  password: string;
+  roles: string[];
+  fullName: string;
+}
+
 interface SeedData {
+  users: SeedUser[];
   products: SeedProduct[];
 }
 
 export const initialData: SeedData = {
+  users: [
+    {
+      email: 'testing_1@gmail.com',
+      password: 'Testing1',
+      roles: ['admin'],
+      fullName: 'Test Admin',
+    },
+    {
+      email: 'testing_2@gmail.com',
+      password: 'Testing2',
+      roles: ['user'],
+      fullName: 'Test User',
+    },
+  ],
+
   products: [
     {
       description:
